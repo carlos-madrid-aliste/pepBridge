@@ -33,4 +33,5 @@ optional arguments:
   --output OUTPUT  Output file in CSV format.
 
 # Usage
-python MatchingMZ.py --maldi maldi.ini --lcms lcms.ini --mass 1.0 --output matched_results_1.0.csv
+python MatchingMZ.py --maldi maldi.ini --lcms lcms.ini \ 
+             --mass 1.0 --output matched_results_1.0.csv
