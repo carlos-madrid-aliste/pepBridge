@@ -13,7 +13,7 @@ class MALDI_LCMS:
     
     """
     
-    def __init__(self, config_file, debug=False) -> None:
+    def __init__(self, ini_file, debug=False) -> None:
         """
         Initialize the MALDI_LCMS object.
 
@@ -24,14 +24,20 @@ class MALDI_LCMS:
         Raises:
             FileNotFoundError: If the config file cannot be found.
         """
-        import config_file as cfg
+
+        # Since config_file is part of the pepBridge package, you should use a 
+        # relative import to ensure Python looks for it within the same package 
+        # rather than as an external module     
+        #import config_file as cfg
+        from .config_file import config_file
+
         
         self.debug = debug
         self.data  = list()        # List of dictionaries containing LCMS/MALDI data
         self.ordered_file = list() # Data ordered for display, as specified by the user.
         self.column_names = list()
     
-        cfg_obj = cfg.config_file(location=config_file, debug=self.debug)
+        cfg_obj = config_file(location=ini_file, debug=self.debug)
         cfg_obj.read_ini()
         
         self.file_name = cfg_obj.get_file_name()

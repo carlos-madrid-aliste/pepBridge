@@ -4,7 +4,11 @@ import sys
 import pprint
 import argparse
 import os
-import MALDI_LCMS as m
+
+# Since MALDI_LCMS is part of the pepBridge package, you should use
+# a relative import to ensure Python looks for it within the same 
+# package rather than as an external module.
+from .MALDI_LCMS import MALDI_LCMS 
 
 class MatchingMZ:
     """
@@ -28,8 +32,8 @@ class MatchingMZ:
         self.debug = debug
         
         # Initialize MALDI and LCSM objects
-        self.maldi_obj = m.MALDI_LCMS(config_file=maldi_ini_file, debug=self.debug) 
-        self.lcms_obj  = m.MALDI_LCMS(config_file=lcms_ini_file, debug=self.debug) 
+        self.maldi_obj = MALDI_LCMS(ini_file=maldi_ini_file, debug=self.debug) 
+        self.lcms_obj  = MALDI_LCMS(ini_file=lcms_ini_file, debug=self.debug) 
         
     def get_hits(self, maldi_mass, np_lcms_masses, np_lcms_file, delta=0):
         """
