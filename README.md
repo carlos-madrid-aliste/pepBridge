@@ -21,7 +21,7 @@ is a Python distribution plus a packaging manager called conda.
 ### a. Create and configure a virtual environment
 
 ```bash
-conda create --name pepBridge python=3.6
+conda create --name pepBridge python=3.9
 ```
 
 ### c. Activate the new virtual environment
@@ -31,7 +31,7 @@ conda activate pepBridge
 
 ### d. Install pepBridge package
 ```bash
-pip install -i https://test.pypi.org/simple/ pepBridge==1.0.25
+pip install -i https://test.pypi.org/simple/ pepBridge
 
 ```
 
