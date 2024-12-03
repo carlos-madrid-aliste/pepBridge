@@ -2,6 +2,7 @@
 import sys
 import argparse
 import os
+import pkg_resources
 from pepBridge import MatchingMZ
 
 def positive_number(value):
@@ -26,9 +27,18 @@ def read_options(args=sys.argv[1:]):
     # type=float ensures that the argument is converted to a float.
     # If the user enters a non-numeric value, argparse will automatically raise an error.
     #parser.add_argument("--mass",  type=float, default='1.0', help="Mass tolerance in Da (float number) (default=1.0 Da)")
-    parser.add_argument("--mass",  type=positive_number, default='1.0', help="Mass tolerance in Da (float number) (default=1.0 Da)")
+    parser.add_argument("--mass",   type=positive_number, default='1.0', help="Mass tolerance in Da (float number) (default=1.0 Da)")
     parser.add_argument("--output", type=str, default='matched_results_1.0.csv', help="Output file in CSV format.")
-        
+    
+    # Add a --version argument
+    # The action="version" automatically handles displaying the version when the 
+    # user specifies the --version argument. The version argument uses pkg_resources.get_distribution('pepBridge').version 
+    # to dynamically fetch the version of the package as defined in setup.py
+    parser.add_argument("--version", action="version",
+        version=f"pepBridge {pkg_resources.get_distribution('pepBridge').version}",
+        help="Show the version of pepBridge."
+    )
+
     # parse arguments from terminal
     opts = parser.parse_args(args)
     

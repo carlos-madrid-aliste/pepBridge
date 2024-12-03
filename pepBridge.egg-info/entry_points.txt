@@ -1,0 +1,3 @@
+[console_scripts]
+copy_data = pepBridge.bin.copy_data:copy_files
+pepbridge = pepBridge.bin.pepbridge:main

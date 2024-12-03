@@ -1,0 +1,3 @@
+include pepBridge/data/*.csv
+include pepBridge/config_files/*.ini
+

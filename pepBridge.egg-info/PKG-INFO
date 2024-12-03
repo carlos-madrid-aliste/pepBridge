@@ -1,3 +1,18 @@
+Metadata-Version: 2.1
+Name: pepBridge
+Version: 1.0.40
+Summary: A Python package for MALDI and LCMS data matching.
+Home-page: https://github.com/carlos-madrid-aliste/pepBridge
+Author: Carlos Madrid
+Author-email: creggae@gmail.com
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown
+License-File: LICENSE-GPL-3.0
+Requires-Dist: numpy
+
 # pepBridge
 
 Easy way to match MALDI-MSI (m/z) peaks to the peptides (m/z) from LC-MS/MS 
