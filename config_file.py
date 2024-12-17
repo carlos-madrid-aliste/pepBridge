@@ -71,12 +71,13 @@ class config_file:
             # Mandatory fields
             self.config_values['file_name'] = config.get('file', 'name')
             self.config_values['mz_column_name'] = config.get('mz_column_name', 'name')
-            self.config_values['output_file'] = config.get('output_file', 'name')
+            #self.config_values['output_file'] = config.get('output_file', 'name')
             
             # Optional fields with default values
             self.config_values['round_mz'] = config.getboolean('round_mz', 'value', fallback=False)
             self.config_values['rounded_column_name'] = config['round_mz'].get('column_name', None)
-            self.config_values['verbose'] = config.getboolean('verbose', 'value', fallback=False)
+            self.config_values['verbose']     = config.getboolean('verbose', 'value', fallback=False)
+            self.config_values['output_file'] = config.get('output_file', 'name', fallback=None)
 
             # read list of column names from INI file. masses are loaded into
             # a list to keep the order. 
